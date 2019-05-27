@@ -11,7 +11,7 @@ public class BankAccountApp {
 		System.out.println(acc1.getName());	
 		acc1.makeDeposit(500);
 		acc1.makeDeposit(600);
-		acc1.payBill(300);
+		//	acc1.payBill(300);
 		acc1.accrue();
 	}
 
@@ -56,6 +56,7 @@ class BankAccount implements IInterest {
 	}
 	
 	public void makeDeposit(double amount) {
+		System.out.println("Making Deposit: " + amount);
 		balance = balance + amount;
 		showBalance();
 	}
@@ -64,7 +65,7 @@ class BankAccount implements IInterest {
 		System.out.println("Balance: " + balance);
 	}
 	
-	@override
+	@Override
 	public void accrue() {
 		balance = balance * (1 + rate/100);
 		showBalance();
